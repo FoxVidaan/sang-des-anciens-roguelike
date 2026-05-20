@@ -5,6 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:github-pages": "ng build --configuration production --base-href /sang-des-anciens-roguelike/",
+    "deploy:github-pages": "sh scripts/deploy-github-pages.sh",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

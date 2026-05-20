@@ -1,0 +1,216 @@
+:host
+  display: block
+  min-height: 100vh
+  color: #e8e2d6
+  background: #11110f
+  font-family: Georgia, "Times New Roman", serif
+
+.game-shell
+  min-height: 100vh
+  display: grid
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 320px)
+  gap: clamp(1.5rem, 4vw, 4rem)
+  align-items: center
+  padding: clamp(2rem, 6vw, 5rem) clamp(1.25rem, 7vw, 7rem) 7rem
+
+.story-panel
+  width: min(100%, 760px)
+  justify-self: center
+
+.game-title
+  margin-bottom: clamp(2rem, 6vh, 4.5rem)
+
+.kicker,
+.scene-label
+  margin: 0 0 0.75rem
+  color: #938b7c
+  font-family: ui-sans-serif, system-ui, sans-serif
+  font-size: 0.72rem
+  font-weight: 700
+  letter-spacing: 0.16em
+  text-transform: uppercase
+
+h1,
+h2,
+p
+  margin: 0
+
+h1
+  color: #f2eee6
+  font-size: clamp(2.4rem, 7vw, 5.5rem)
+  font-weight: 400
+  line-height: 0.95
+
+.scene
+  max-width: 680px
+
+.scene h2
+  color: #fff8ec
+  font-size: clamp(1.65rem, 4vw, 3.25rem)
+  font-weight: 400
+  line-height: 1.08
+
+.scene p:not(.scene-label)
+  margin-top: 1.2rem
+  color: #d2c8b8
+  font-size: clamp(1.05rem, 2.1vw, 1.35rem)
+  line-height: 1.75
+
+.choice-list
+  display: grid
+  gap: 0.7rem
+  margin-top: clamp(2rem, 6vh, 4rem)
+  width: min(100%, 460px)
+
+.choice-button,
+.run-controls button
+  min-height: 2.65rem
+  border: 1px solid #484135
+  border-radius: 6px
+  background: #191815
+  color: #eee5d6
+  font: 600 0.92rem/1.2 ui-sans-serif, system-ui, sans-serif
+  cursor: pointer
+  transition: border-color 160ms ease, background 160ms ease, color 160ms ease
+
+.choice-button
+  width: 100%
+  padding: 0.8rem 1rem
+  text-align: left
+
+.choice-button:hover:not(:disabled),
+.choice-button:focus-visible,
+.run-controls button:hover,
+.run-controls button:focus-visible
+  border-color: #8f7b59
+  background: #242018
+  color: #fff8ec
+  outline: none
+
+.choice-button.primary
+  border-color: #7e6d4f
+
+.choice-button:disabled
+  color: #726a5d00
+  cursor: initial
+  user-select: none
+  opacity: 0
+
+.memory-panel
+  align-self: end
+  color: #a79e8d
+  font-family: ui-sans-serif, system-ui, sans-serif
+
+.memory-panel h2
+  margin-bottom: 1rem
+  color: #d8cdbb
+  font-family: ui-sans-serif, system-ui, sans-serif
+  font-size: 0.78rem
+  font-weight: 700
+  letter-spacing: 0.16em
+  text-transform: uppercase
+
+.memory-panel ol
+  display: grid
+  gap: 0.8rem
+  margin: 0
+  padding: 0
+  list-style: none
+
+.memory-panel li
+  padding-left: 0.85rem
+  border-left: 1px solid #3f382e
+  font-size: 0.88rem
+  line-height: 1.5
+
+.bottom-bar
+  position: fixed
+  right: 0
+  bottom: 0
+  left: 0
+  z-index: 10
+  display: flex
+  justify-content: space-between
+  gap: 1rem
+  align-items: center
+  padding: 0.7rem clamp(1rem, 4vw, 2.5rem)
+  border-top: 1px solid #29251f
+  background: rgba(16, 15, 13, 0.94)
+  backdrop-filter: blur(10px)
+  font-family: ui-sans-serif, system-ui, sans-serif
+
+.stats
+  display: flex
+  gap: clamp(0.75rem, 2vw, 1.6rem)
+  margin: 0
+
+.stats div
+  min-width: 4.1rem
+
+.stats dt
+  color: #8f8778
+  font-size: 0.68rem
+  font-weight: 700
+  letter-spacing: 0.1em
+  text-transform: uppercase
+
+.stats dd
+  margin: 0.15rem 0 0
+  color: #efe6d7
+  font-size: 1rem
+  font-weight: 700
+
+.run-controls
+  display: flex
+  gap: 0.5rem
+  align-items: center
+
+.run-controls button
+  min-width: 6.5rem
+  padding: 0 0.8rem
+
+.run-controls .danger
+  color: #d9a29a
+
+@media (max-width: 840px)
+  .game-shell
+    display: block
+    padding-bottom: 9.5rem
+
+  .story-panel
+    margin: 0 auto
+
+  .memory-panel
+    width: min(100%, 680px)
+    margin: 3rem auto 0
+
+  .bottom-bar
+    align-items: stretch
+    flex-direction: column
+
+  .stats,
+  .run-controls
+    justify-content: space-between
+
+  .run-controls button
+    flex: 1
+    min-width: 0
+
+@media (max-width: 560px)
+  .game-shell
+    padding-inline: 1rem
+    padding-bottom: 11rem
+
+  .stats
+    display: grid
+    grid-template-columns: repeat(4, minmax(0, 1fr))
+    gap: 0.5rem
+
+  .stats div
+    min-width: 0
+
+  .stats dt
+    font-size: 0.62rem
+
+  .stats dd
+    font-size: 0.95rem
